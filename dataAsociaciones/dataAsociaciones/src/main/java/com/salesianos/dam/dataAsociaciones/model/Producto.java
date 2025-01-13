@@ -34,6 +34,16 @@ public class Producto {
             foreignKey = @ForeignKey(name = "fk_producto_categoria"))
     private Categoria categoria;
 
+    //Métodos helper clase producto
+    public String getCategoria(){
+        if(categoria!=null){
+            return categoria.getNombre();
+        }
+        return "Sin categoria";
+    }
+    public boolean esActivo(){
+        return true;
+    }
 
     @Override
     public final boolean equals(Object o) {

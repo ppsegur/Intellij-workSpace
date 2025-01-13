@@ -28,6 +28,16 @@ public class Categoria {
     @Builder.Default
     private List<Producto> productos = new ArrayList<>();
 
+    //Métodos helper
+    public List<Producto> getProductos() {
+        List<Producto> listaProductos = new ArrayList<>();
+        for (Producto producto : productos) {
+            if (producto.esActivo()){
+                listaProductos.add(producto);
+            }
+        }
+        return listaProductos;
+    }
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6c17cd5-a74f-49a8-b617-5cbdd346d1a0" name="Changes" comment="" />
+    <list default="true" id="b6c17cd5-a74f-49a8-b617-5cbdd346d1a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dataAsociaciones/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataAsociaciones/src/main/java/com/salesianos/dam/dataAsociaciones/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataAsociaciones/src/main/java/com/salesianos/dam/dataAsociaciones/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataAsociaciones/src/main/java/com/salesianos/dam/dataAsociaciones/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/dataAsociaciones/src/main/java/com/salesianos/dam/dataAsociaciones/model/Producto.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
 }]]></component>
@@ -30,6 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/pepes/Desktop/WorkSpace-Intell/dataAsociaciones",
@@ -66,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736792846757</updated>
-      <workItem from="1736792847764" duration="1960000" />
+      <workItem from="1736792847764" duration="2979000" />
     </task>
     <servers />
   </component>
