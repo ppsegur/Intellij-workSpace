@@ -15,11 +15,11 @@ import java.util.Objects;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name="comunidades")
 public class Comunidad {
 
     @Id
     @GeneratedValue
+    @Column(name = "comunidad_id")
     private Long id;
 
     private String nombre;
