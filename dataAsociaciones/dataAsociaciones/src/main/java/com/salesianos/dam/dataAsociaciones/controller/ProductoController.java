@@ -2,12 +2,15 @@ package com.salesianos.dam.dataAsociaciones.controller;
 
 
 import com.salesianos.dam.dataAsociaciones.dto.EditProductoCmd;
+import com.salesianos.dam.dataAsociaciones.dto.GetProductoDto;
 import com.salesianos.dam.dataAsociaciones.model.Producto;
 import com.salesianos.dam.dataAsociaciones.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product/")

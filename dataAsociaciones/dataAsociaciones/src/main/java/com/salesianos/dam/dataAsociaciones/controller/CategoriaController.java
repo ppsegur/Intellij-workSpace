@@ -6,6 +6,7 @@ import com.salesianos.dam.dataAsociaciones.dto.GetCategoriaDto;
 import com.salesianos.dam.dataAsociaciones.model.Categoria;
 import com.salesianos.dam.dataAsociaciones.service.CategoriaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoriaController {
 
+
     private final CategoriaService categoriaService;
+
+    public CategoriaController(CategoriaService categoriaService) {
+        this.categoriaService = categoriaService;
+    }
 
     @GetMapping
     public List<GetCategoriaDto> getAllCategorias() {

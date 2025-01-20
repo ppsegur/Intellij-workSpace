@@ -38,6 +38,7 @@ public class Categoria {
         }
         return listaProductos;
     }
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;

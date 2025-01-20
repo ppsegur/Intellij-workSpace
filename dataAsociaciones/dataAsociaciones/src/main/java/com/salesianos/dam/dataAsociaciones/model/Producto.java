@@ -35,7 +35,7 @@ public class Producto {
     private Categoria categoria;
 
     //Métodos helper clase producto
-    public String getCategoria(){
+    public Categoria getCategoria(){
         if(categoria!=null){
             return categoria.getNombre();
         }
