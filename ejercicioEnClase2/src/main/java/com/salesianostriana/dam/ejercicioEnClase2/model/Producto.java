@@ -31,7 +31,6 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "categoria_id",
             foreignKey = @ForeignKey(name = "fk_producto_categoria")
-
     )
     private Categoria categoria;
 

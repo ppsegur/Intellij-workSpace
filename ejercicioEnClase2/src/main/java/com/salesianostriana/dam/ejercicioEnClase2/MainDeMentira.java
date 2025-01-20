@@ -11,51 +11,40 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-
 @Component
 @RequiredArgsConstructor
 public class MainDeMentira {
 
-
-    private final CategoriaRepositorio categoriaRepositorio;
-    private final ProductoRepositorio productoRepositorio;
+    private final ProductoRepositorio productoRepository;
+    private final CategoriaRepositorio categoriaRepository;
 
     @PostConstruct
     public void init() {
 
         Categoria c = Categoria.builder()
-                .nombre("Electrónica").build();
-
-        Optional<Categoria> optionalCategoria = categoriaRepositorio.findById(1L);
-
-        if (optionalCategoria.isPresent()) {
-            c = optionalCategoria.get();
-        }
-
-        Producto p = Producto.builder()
-                .nombre("Ipad pro")
-                .precio(123.45)
-                //.categoria(c)
+                .nombre("Alimentación")
                 .build();
 
-        c.addProducto(p);
+        Categoria c2 = Categoria.builder()
+                .nombre("Verde")
+                .categoriaPadre(c)
+                .build();
 
-        productoRepositorio.save(p);
+        Categoria c3 = Categoria.builder()
+                .nombre("Líquido")
+                .build();
 
-        System.out.println("Productos de la categoria C1");
-        System.out.println(c.getProductos());
+        categoriaRepository.save(c);
+        categoriaRepository.save(c2);
+        categoriaRepository.save(c3);
 
-        Producto p2 = Producto.builder()
-                .nombre("Iphone 2")
-                .precio(234.56)
+        Producto p = Producto.builder()
+                .nombre("Lechuga")
+                .precio(2.30)
                 .categoria(c)
                 .build();
 
-        productoRepositorio.saveAll(List.of(p, p2));
-
-
-        productoRepositorio.findAll()
-                .forEach(System.out::println);
-
+        productoRepository.save(p);
+        System.out.printf(c.toString());
     }
 }

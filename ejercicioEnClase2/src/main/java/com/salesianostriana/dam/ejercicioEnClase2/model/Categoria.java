@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 
 @Entity
@@ -26,14 +24,26 @@ public class Categoria {
 
     private String nombre;
 
-    public Categoria(String nombre) {
-     this.nombre = nombre;
-    }
+
 
     @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER)
     @Builder.Default
     @ToString.Exclude
-    private List<Producto> productos = new ArrayList<Producto>();
+    private Set<Producto> productos = new HashSet<>();
+
+
+    //Asociación refléxiva
+    @ManyToOne
+    @JoinColumn(name = "categoria_reacion_id",
+            foreignKey =  @ForeignKey(name = "fk_categoriPadre_categoria"))
+    private Categoria categoriaPadre;
+
+    @OneToMany(mappedBy = "categoriaPadre", fetch = FetchType.EAGER)
+    @Builder.Default
+    @ToString.Exclude
+    private Set<Categoria> listaCategoriasHijas = new HashSet<>();
+
+
 
     @Override
     public final boolean equals(Object o) {
@@ -53,15 +63,24 @@ public class Categoria {
 
     //Métodos helpers
     public void addProducto(Producto p){
-        if (this.productos == null) {
-            this.productos = new ArrayList<>();
-        }
+
         p.setCategoria(this);
         this.productos.add(p);
     }
 
     public void removeProducto(Producto p){
-        this.getProductos().remove(p);
+        this.productos.remove(p);
         p.setCategoria(null);
+    }
+
+    //Métodos helper(categoria)
+    public void addCategoria(Categoria c){
+        c.setCategoriaPadre(this);
+        this.listaCategoriasHijas.add(c);
+    }
+    public void removeCategoria(Categoria c){
+        this.listaCategoriasHijas.remove(c);
+        c.setCategoriaPadre(null);
+
     }
 }
