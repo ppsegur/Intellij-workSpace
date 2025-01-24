@@ -11,16 +11,13 @@ import lombok.experimental.SuperBuilder;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
+//@SuperBuilder
+@Builder
 @DiscriminatorValue("Sin iva")
 public class FacturaSinIva extends  Factura{
 
     private String nombreTitular;
 
-    public FacturaSinIva(Long id,String numero, String concepto, double importe,String nombreTitular) {
-        super(id,numero, concepto, importe);
-        this.nombreTitular = nombreTitular;
-    }
     @Override
     public double importeConIva() {
         return getImporte();

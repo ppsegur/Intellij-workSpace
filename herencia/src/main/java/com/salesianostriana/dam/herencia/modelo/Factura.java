@@ -11,15 +11,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class Factura {
+public  class Factura {
     @Id
     @GeneratedValue
     private Long id;
+
     private String numero;
     private String concepto;
     private double importe;
 
-    public abstract double importeConIva();
+    public  double importeConIva(){
+        return importe;
+    };
 
 
 }
