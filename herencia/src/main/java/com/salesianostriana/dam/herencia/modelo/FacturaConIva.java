@@ -10,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@SuperBuilder
 public class FacturaConIva extends Factura {
 
     private double iva = 21;

@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.herencia.modelo;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 
 //Herencia Single Table (EMPLEADO-PASANTE-CONTRATADO)
@@ -12,4 +13,6 @@ public abstract class Empleado {
     private Long id;
     private String nombre;
     private String apellido;
+
+
 }
